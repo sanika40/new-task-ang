@@ -1,0 +1,37 @@
+.child{
+    padding: 100px;
+}
+h1{
+    margin-left: 17%;
+    margin-bottom: 30px;
+    color: rgb(15, 197, 253);
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.left img{
+    width: 300px;
+    height: 400px;
+}
+.left button{
+    margin: 2px;
+    margin-left: 30px;
+    background-color: yellow;
+    border: none;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgb(213, 213, 71);
+}
+
+.right p{
+    width: 500px;
+}
+.right button{
+    background-color: green;
+    padding: 10px;
+    width: 100px;
+    color: white;
+}

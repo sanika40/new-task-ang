@@ -1,0 +1,19 @@
+<div class="child">
+    <h1>Profile</h1>
+    <div class="profile">
+        <div class="left">
+
+            <label for="image"><img [src]="imgPath" alt=""></label>
+            <input type="file" id="image" (change)="changeImage($event)" style="display: none;">
+            <br>
+            <button (click)="edit_photo_func()">Edit Photo</button>
+            <button  (click)="openDialog()">Edit Profile</button>
+        </div>
+        <div class="right">
+            <p>I am {{profile?.firstname}} {{profile?.lastname}} and ia m above {{profile?.age}} yaers and can send your emails to {{profile?.email}} I live in state of Alaska. I like to play {{profile?.tags}}.ANd please send me newsletter.Please reach out to me on my phone number {{profile?.mobile}}.</p>
+            <button>I Agree</button>
+        </div>
+</div>
+
+
+</div>

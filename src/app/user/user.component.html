@@ -1,0 +1,84 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="RegisterUser()" class="p-3 m-1">
+        <input formControlName="id" placeholder="id">
+        <div class="d-flex">
+            <div class="inp3" style="width: 40%;">
+                <label for="img">
+                    <img [src]="imgPath" width="80px" height="80px">
+                </label>
+                <input type="file" id="img" (change)="changeImage($event)" style="display: none;">
+                <br>
+                <span *ngIf="imageErr" style="color: red; font-size: 10px;">image must smaller than 2mb</span>
+            </div>
+           <div class="row">
+                <div class="col">
+                    <input class="form-control" type="text" id="fName" placeholder="First Name" formControlName="firstname">
+                    <br>
+                    <span *ngIf="firstname && firstname.invalid && firstname.touched" style="color: red; font-size: 10px;">this Input field is invalid</span>
+                </div>
+                <div class="col">
+                    <input class="form-control"  type="text" id="lName" placeholder="Last Name" formControlName="lastname">
+                    <br>
+                    <span *ngIf="lastname && lastname.invalid && lastname.touched" style="color: red; font-size: 10px;">this Input field is invalid</span>
+                </div>
+           </div>
+        </div>
+        <br>
+
+        <input class="form-control"  type="text" id="email" placeholder="Email" formControlName="email">
+        <br>
+        <span *ngIf="email && email.invalid && email.touched" style="color: red; font-size: 10px;">this Input field is invalid</span>
+        <br>
+
+        <input class="form-control"  type="text" id="phone" placeholder="(541) 754-3010" formControlName="mobile">
+        <br>
+        <span *ngIf="mobile && mobile.invalid && mobile.touched" style="color: red; font-size: 10px;">this Input field is invalid</span>
+        <br>
+
+        <div id="ageBar">
+            <label for="customRange1" class="form-label">Age</label>
+            <input class="form-control"  type="range" class="form-range" id="customRange1" style="width: 200px; margin-left: 20px;"
+                formControlName="age">
+            <p style="margin-left: 60px;">20
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60
+            </p>
+        </div>
+
+        <div>
+            <select class="form-select" aria-label="Default select example" formControlName="state">
+                <option selected>State</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Another action">Another action</option>
+                <option value="Something else here">Something else here</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <select class="form-select" aria-label="Default select example" formControlName="country">
+                <option selected>Country</option>
+                <option value="Action">Action</option>
+                <option value="Another action">Another action</option>
+                <option value="Something else here">Something else here</option>
+            </select>
+        </div>
+        <br>
+
+        <input class="form-control" type="text" id="address" placeholder="Address" formControlName="address">
+        <br>
+
+        <input class="form-control" type="text" id="tags" placeholder="tags" formControlName="tags">
+        <br>
+
+        <div>
+            <input class="form-check" type="checkbox" id="checkbox" formControlName="subscribe" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">subscribe to newsletter</label>
+        </div>
+        <br>
+
+        <div class="">
+            <button class="btn btn-outline-danger" type="reset" (click)="closeDialog()">Cancel</button> &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-outline-success" [disabled]="registerForm.invalid" >Submit</button>
+        </div>
+    </form>
+</div>
